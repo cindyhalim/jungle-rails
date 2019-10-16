@@ -4,7 +4,6 @@ class Admin::ProductsController < ApplicationController
     @products = Product.order(id: :desc).all
 
   end
-  puts @total_products
 
   def new
     @product = Product.new
