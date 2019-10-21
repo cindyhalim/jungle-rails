@@ -15,23 +15,27 @@ RSpec.describe Product, type: :model do
 
     it 'is not valid without a name' do 
       product.name = nil
-      expect(product).to_not be_valid
+      expect(product).to_not be_valid and raise_error(product.errors.full_messages)
     end
 
     it 'is not valid without a price' do 
       product.price = nil
-      expect(product).to_not be_valid
+      expect(product).to_not be_valid and raise_error(product.errors.full_messages)
     end
 
     it 'is not valid without a quantity' do 
       product.quantity = nil
-      expect(product).to_not be_valid
+      expect(product).to_not be_valid and raise_error(product.errors.full_messages)
+  
     end
 
     it 'is not valid without a category' do
       cat = nil
-      expect(product).to_not be_valid
+      expect(product).to_not be_valid and raise_error(product.errors.full_messages)
     end
+
+
+
   end
 end
 
