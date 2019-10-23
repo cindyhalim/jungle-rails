@@ -10,7 +10,7 @@ RSpec.describe Product, type: :model do
     })
 
     it 'is valid with valid attributes' do 
-      expect(product).to be_valid
+      expect(product).to be_valid and not raise_error(product.errors.full_messages)
     end
 
     it 'is not valid without a name' do 
